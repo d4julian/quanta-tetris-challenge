@@ -26,7 +26,6 @@ class Grid:
         for row, i in [(row, i) for i, row in enumerate(self.grid) if all(row)]:
             self.grid.pop(i)
             self.grid.insert(0, [False for _ in range(self.WIDTH)])
-        if self.has_full_row(): self.clear_filled_rows()
 
     def can_place_shape(self, shape_2d: list, row: int, col: int) -> bool:
         return not any(
